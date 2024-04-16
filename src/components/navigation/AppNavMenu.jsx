@@ -13,6 +13,10 @@ import {
   logoText,
   hideOnMobile,
 } from "@styles/styles";
+import SearchBar from './SearchBar';
+import UserProfile from '@components/UserProfile';
+import NotificationList from '@components/NotificationList';
+import Upload from '@components/Upload';
 
 const AppNavMenu = (props) => {
   return (
@@ -34,6 +38,18 @@ const AppNavMenu = (props) => {
               YouTube
             </Typography>
           </Box>
+          <Box sx={hideOnMobile}>
+            <SearchBar />
+        </Box>
+        <Box sx={hideOnMobile}>
+            <Upload />
+        </Box>
+        <Box sx={hideOnMobile}>
+            <NotificationList />
+        </Box>
+        <Box sx={hideOnMobile}>
+            <UserProfile />
+        </Box>
         </Box>
       </Toolbar>
     </AppBar>
