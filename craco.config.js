@@ -1,8 +1,17 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 
 module.exports = {
   webpack: {
+    plugins: [
+      new webpack.DefinePlugin({
+        'process.env': {
+          NODE_ENV: JSON.stringify('production'),
+        },
+      }),
+      new Dotenv(),
+    ],
     alias: {
       '@': path.join(path.resolve(__dirname, './src')),
       '@components': path.join(path.resolve(__dirname, './src/components')),
